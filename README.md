@@ -16,4 +16,5 @@ def my_great_method
 end
 ```
 
+//sudo service postgresql start
 //rails s -b $IP -p $PORT
