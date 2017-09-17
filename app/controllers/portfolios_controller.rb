@@ -29,12 +29,12 @@ class PortfoliosController < ApplicationController
      end
     end
     
-    # GET / blogs/:id/edit
+    # GET / portfolio/:id/edit
     def edit
         @portfolio_item = Portfolio.find(params[:id])
     end
     
-      # PATCH/PUT /blogs/:id
+      # PATCH/PUT /portfolio/:id
   def update
       @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
