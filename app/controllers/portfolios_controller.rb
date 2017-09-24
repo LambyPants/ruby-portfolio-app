@@ -1,14 +1,15 @@
 class PortfoliosController < ApplicationController
+    layout 'portfolio'
     
-    #GET /portfolios 
+    #GET /portfolios
     def index
     @portfolio_items = Portfolio.all
     end
-    
+
     def angular
       @angular_portfolio_items = Portfolio.angular
     end
-    
+
     #GET /portfolios/new
     def new
         @portfolio_item = Portfolio.new
@@ -28,12 +29,12 @@ class PortfoliosController < ApplicationController
       end
      end
     end
-    
+
     # GET / portfolio/:id/edit
     def edit
         @portfolio_item = Portfolio.find(params[:id])
     end
-    
+
       # PATCH/PUT /portfolio/:id
   def update
       @portfolio_item = Portfolio.find(params[:id])
@@ -50,24 +51,23 @@ class PortfoliosController < ApplicationController
   def show
     @portfolio_item = Portfolio.find(params[:id])
   end
-  
+
   #DELETE /portfolios/:id
   def destroy
     @portfolio_item = Portfolio.find(params[:id])
-    
+
     @portfolio_item.destroy
     respond_to do |format|
       format.html { redirect_to portfolios_path, notice: 'Record successfully removed.' }
     end
   end
-  
+
   private
   def portfolio_params
-  params.require(:portfolio).permit(:title, 
-                                    :subtitle, 
-                                    :body, 
+  params.require(:portfolio).permit(:title,
+                                    :subtitle,
+                                    :body,
                                     technologies_attributes: [:name]
                                     )
   end
 end
-  
