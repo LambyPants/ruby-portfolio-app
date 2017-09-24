@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= @page.title %></title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-    <meta name="keywords" content = "<%=seo_keywords %>" />
+    <meta name="keywords" content = "<%=@seo_keywords %>" />
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +12,7 @@
        <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
 
-          <%= render "shared/nav" %>
+          <%= render "shared/nav", location: 'top' %>
           
        <div>
          <%= link_to "Portfolio", portfolios_path %></div>
