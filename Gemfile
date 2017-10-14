@@ -55,4 +55,4 @@ gem 'devise', '~> 4.3'
 
 gem 'bootstrap', '~> 4.0.0.alpha'
 gem 'jquery-rails'
-gem 'rlambert_view_tool', git: 'https://github.com/LambyPants/Ruby-Gem-View-Tool'
+gem 'rlambert_view_tool', '~> 0.1.0'
