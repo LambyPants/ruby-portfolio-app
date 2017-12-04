@@ -38,12 +38,11 @@
   <h2>Technologies Used</h2>
   <div>
     <%= form.fields_for :technologies do |technology_form| %>
-    <div class="form-group">
-      <%= technology_form.label :name %>
-      <%= technology_form.text_field :name, class: 'form-control' %>
-    </div>
+      <%= render 'technology_fields', form: technology_form %>
     <% end %>
+    <%= link_to_add_association 'Add Technology', form, :technologiess %>
   </div>
+
 
   <div class="actions">
     <%= form.submit 'Save Portfolio Item', class: 'btn btn-primary btn-block' %>
