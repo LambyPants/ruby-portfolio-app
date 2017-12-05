@@ -8,12 +8,12 @@ module ApplicationHelper
        end
     end
 
-def source_helper(layout_name)
-     if session[:source]
-       greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout"
-       content_tag(:p, greeting, class: "source-greeting")
-     end
-end
+    def source_helper(layout_name)
+         if session[:source]
+           greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout"
+           content_tag(:p, greeting, class: "source-greeting")
+         end
+    end
 
     def copyright_generator
   RLambertViewTool::Renderer.copyright 'Ryan Lambert', 'All rights reserved'
@@ -55,14 +55,16 @@ end
       "active" if current_page? path
     end
 
-    def alerts
-      alert = (flash[:alert] || flash[:error] || flash[:notice])
-      if alert
-        alert_generator
-      end
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+    if alert
+      alert_generator alert
     end
+  end
 
   def alert_generator msg
-    js add_gritter(msg, title: "Ryan Lambert's Site", sticky: false)
+    js add_gritter(msg, title: "Ryans Awesome App", sticky: false)
   end
+
 end
