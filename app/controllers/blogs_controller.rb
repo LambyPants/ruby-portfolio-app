@@ -9,6 +9,7 @@ class BlogsController < ApplicationController
       @blogs = Blog.recent.page(params[:page]).per(5)
     else
       @blogs = Blog.published.recent.page(params[:page]).per(5)
+    end
     @page_title = "Portfolio Blog"
   end
 
@@ -22,6 +23,7 @@ class BlogsController < ApplicationController
     @seo_keywords = @blog.body
   else
     redirect_to blogs_path, notice: "You are not authorized to access this page - you must be logged in."
+    end
   end
 
   # GET /blogs/new
